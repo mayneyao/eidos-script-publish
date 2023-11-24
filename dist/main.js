@@ -2058,7 +2058,6 @@ async function main_default(_input, context) {
         
         .hljs-operator {
             color: #868686;
-            /* There is a bug where the syntax highlighter would pick no color for e.g. ` && ` symbols in the code samples. Let's overwrite this */
         }
         
         

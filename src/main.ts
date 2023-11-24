@@ -28,8 +28,7 @@ export default async function (_input: Input, context: Context) {
       const title = node.name;
       const markdown = await eidos.currentSpace.getDocMarkdown(currentNodeId);
       const content = marked.parse(markdown);
-      const html =
-        `
+      const html = `
       <!DOCTYPE html>
       <html>
         <head>
@@ -91,8 +90,6 @@ export default async function (_input: Input, context: Context) {
         
         .hljs-operator {
             color: #868686;
-            /* There is a bug where the syntax highlighter would pick no color for e.g. ` &&
-        ` symbols in the code samples. Let's overwrite this */
         }
         
         
