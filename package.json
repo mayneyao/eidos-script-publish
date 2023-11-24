@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsc --watch",
-    "build": "esbuild src/main.ts --bundle --outfile=src/main.js --platform=browser --format=esm"
+    "build": "esbuild src/main.ts --bundle --outfile=dist/main.js --platform=browser --format=esm"
   },
   "devDependencies": {
     "esbuild": "^0.19.7",

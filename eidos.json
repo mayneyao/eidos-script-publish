@@ -3,7 +3,7 @@
     "name": "Eidos Publish",
     "description": "Make doc available to the public",
     "version": "0.0.1",
-    "main": "src/main.js",
+    "main": "dist/main.js",
     "inputJSONSchema": {
         "type": "object",
         "properties": {},
