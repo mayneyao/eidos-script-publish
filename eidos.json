@@ -1,0 +1,40 @@
+{
+    "id": "todo",
+    "name": "Todo",
+    "description": "a simple script to add todo items to the table",
+    "version": "0.0.1",
+    "main": "src/main.js",
+    "inputJSONSchema": {
+        "type": "object",
+        "properties": {
+            "content": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "content"
+        ]
+    },
+    "outputJSONSchema": {
+        "type": "object",
+        "properties": {
+            "todoId": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "todoId"
+        ]
+    },
+    "tables": [
+        {
+            "name": "todo",
+            "fields": [
+                {
+                    "name": "title",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}
