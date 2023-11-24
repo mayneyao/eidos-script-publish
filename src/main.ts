@@ -28,9 +28,19 @@ export default async function (_input: Input, context: Context) {
       const title = node.name;
       const markdown = await eidos.currentSpace.getDocMarkdown(currentNodeId);
       const content = marked.parse(markdown);
-      const html = `<h1>${title}</h1>
-${content}
-      `;
+      const html = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="UTF-8">
+          <title>${title}</title>
+        </head>
+        <body>
+          <h1>${title}</h1>
+          ${content}
+        </body>
+      </html>
+    `;
       const url = URL.createObjectURL(new Blob([html], { type: "text/html" }));
       console.log({
         url,
