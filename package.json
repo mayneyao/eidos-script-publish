@@ -5,10 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "tsc --watch",
-    "build": "tsc"
+    "build": "esbuild src/main.ts --bundle --outfile=src/main.js --platform=browser --format=esm"
   },
   "devDependencies": {
+    "esbuild": "^0.19.7",
     "typescript": "^5.2.2",
     "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "marked": "^10.0.0"
   }
 }

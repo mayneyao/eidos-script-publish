@@ -4,7 +4,15 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  marked:
+    specifier: ^10.0.0
+    version: 10.0.0
+
 devDependencies:
+  esbuild:
+    specifier: ^0.19.7
+    version: 0.19.7
   typescript:
     specifier: ^5.2.2
     version: 5.3.2
@@ -345,6 +353,12 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /marked@10.0.0:
+    resolution: {integrity: sha512-YiGcYcWj50YrwBgNzFoYhQ1hT6GmQbFG8SksnYJX1z4BXTHSOrz1GB5/Jm2yQvMg4nN1FHP4M6r03R10KrVUiA==}
+    engines: {node: '>= 18'}
+    hasBin: true
+    dev: false
 
   /nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}

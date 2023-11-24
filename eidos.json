@@ -1,40 +1,24 @@
 {
-    "id": "todo",
-    "name": "Todo",
-    "description": "a simple script to add todo items to the table",
+    "id": "publish",
+    "name": "Eidos Publish",
+    "description": "Make doc available to the public",
     "version": "0.0.1",
     "main": "src/main.js",
     "inputJSONSchema": {
         "type": "object",
-        "properties": {
-            "content": {
-                "type": "string"
-            }
-        },
-        "required": [
-            "content"
-        ]
+        "properties": {},
+        "required": []
     },
     "outputJSONSchema": {
         "type": "object",
         "properties": {
-            "todoId": {
+            "url": {
                 "type": "string"
             }
         },
         "required": [
-            "todoId"
+            "url"
         ]
     },
-    "tables": [
-        {
-            "name": "todo",
-            "fields": [
-                {
-                    "name": "title",
-                    "type": "string"
-                }
-            ]
-        }
-    ]
+    "tables": []
 }
