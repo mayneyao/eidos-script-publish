@@ -1993,9 +1993,17 @@ async function main_default(_input, context) {
   if (currentNodeId) {
     const node = await eidos.currentSpace.getTreeNode(currentNodeId);
     if (node.type === "doc") {
+      const title = node.name;
       const markdown = await eidos.currentSpace.getDocMarkdown(currentNodeId);
-      const html = marked.parse(markdown);
-      console.log(html);
+      const content = marked.parse(markdown);
+      const html = `<h1>${title}</h1>
+${content}
+      `;
+      const url = URL.createObjectURL(new Blob([html], { type: "text/html" }));
+      console.log({
+        url,
+        html
+      });
       return html;
     }
   }
