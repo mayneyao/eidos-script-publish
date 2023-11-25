@@ -36,12 +36,15 @@ export default async function (_input: Input, context: Context) {
       const url = URL.createObjectURL(new Blob([html], { type: "text/html" }));
       console.log(url);
       // upload to cf
-      const docPublishUrl = `${context.env.API_END_POINT}/${currentNodeId}`;
+      const publishServiceURL = new URL(context.env.API_END_POINT);
+      publishServiceURL.pathname = `/${currentNodeId}`;
+      const docPublishUrl = publishServiceURL.toString();
       const res = await fetch(docPublishUrl, {
         method: "PUT",
         body: html,
       });
       if (res.ok) {
+        window.open(docPublishUrl);
         return docPublishUrl;
       } else {
         return `Error: ${res.status} ${res.statusText}`;

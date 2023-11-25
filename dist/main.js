@@ -2002,12 +2002,15 @@ async function main_default(_input, context) {
       const html = tmp_default.replace(/\${{title}}/g, title).replace(/\${{content}}/g, content);
       const url = URL.createObjectURL(new Blob([html], { type: "text/html" }));
       console.log(url);
-      const docPublishUrl = `${context.env.API_END_POINT}/${currentNodeId}`;
+      const publishServiceURL = new URL(context.env.API_END_POINT);
+      publishServiceURL.pathname = `/${currentNodeId}`;
+      const docPublishUrl = publishServiceURL.toString();
       const res = await fetch(docPublishUrl, {
         method: "PUT",
         body: html
       });
       if (res.ok) {
+        window.open(docPublishUrl);
         return docPublishUrl;
       } else {
         return `Error: ${res.status} ${res.statusText}`;
