@@ -1,11 +1,11 @@
 {
-  "name": "eidos-script-template",
+  "name": "eidos-script-publish",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "tsc --watch",
-    "build": "esbuild src/main.ts --bundle --outfile=dist/main.js --platform=browser --format=esm"
+    "build": "esbuild src/main.ts --bundle --outfile=dist/main.js --platform=browser --format=esm --loader:.html=text"
   },
   "devDependencies": {
     "esbuild": "^0.19.7",

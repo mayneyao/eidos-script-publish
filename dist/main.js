@@ -1987,6 +1987,9 @@ var parseInline = marked.parseInline;
 var parser = _Parser.parse;
 var lexer = _Lexer.lex;
 
+// src/tmp.html
+var tmp_default = '<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <meta charset="UTF-8" />\r\n    <title>${{title}}</title>\r\n    <style>\r\n      body {\r\n        font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;\r\n        color: #111;\r\n        background-color: #fbfbfb;\r\n        -webkit-text-size-adjust: 100%;\r\n        -webkit-font-feature-settings: "kern" 1;\r\n        -moz-font-feature-settings: "kern" 1;\r\n        -o-font-feature-settings: "kern" 1;\r\n        font-feature-settings: "kern" 1;\r\n        font-kerning: normal;\r\n        padding: 30px;\r\n      }\r\n\r\n      main {\r\n        max-width: 900px;\r\n        margin: 0 auto;\r\n      }\r\n\r\n      @media only screen and (max-width: 600px) {\r\n        body {\r\n          padding: 5px;\r\n        }\r\n        body > #content {\r\n          padding: 0px 20px 20px 20px !important;\r\n        }\r\n      }\r\n\r\n      body > #content {\r\n        margin: 0px;\r\n        max-width: 900px;\r\n        border: 1px solid #e1e4e8;\r\n        padding: 10px 40px;\r\n        padding-bottom: 20px;\r\n        border-radius: 2px;\r\n        margin-left: auto;\r\n        margin-right: auto;\r\n      }\r\n\r\n      summary {\r\n        cursor: pointer;\r\n        text-decoration: underline;\r\n      }\r\n\r\n      hr {\r\n        color: #bbb;\r\n        background-color: #bbb;\r\n        height: 1px;\r\n        flex: 0 1 auto;\r\n        margin: 1em 0;\r\n        padding: 0;\r\n        border: none;\r\n      }\r\n\r\n      .hljs-operator {\r\n        color: #868686;\r\n      }\r\n\r\n      /**\r\n        * Links\r\n        */\r\n\r\n      a {\r\n        color: #0366d6;\r\n        text-decoration: none;\r\n      }\r\n\r\n      a:visited {\r\n        color: #0366d6;\r\n      }\r\n\r\n      a:hover {\r\n        color: #0366d6;\r\n        text-decoration: underline;\r\n      }\r\n\r\n      pre {\r\n        background-color: #f6f8fa;\r\n        border-radius: 3px;\r\n        font-size: 85%;\r\n        line-height: 1.45;\r\n        overflow: auto;\r\n        padding: 16px;\r\n      }\r\n\r\n      /**\r\n    * Code blocks\r\n    */\r\n\r\n      code {\r\n        background-color: rgba(27, 31, 35, 0.05);\r\n        border-radius: 3px;\r\n        font-size: 85%;\r\n        margin: 0;\r\n        word-wrap: break-word;\r\n        padding: 0.2em 0.4em;\r\n        font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,\r\n          monospace;\r\n      }\r\n\r\n      pre > code {\r\n        background-color: transparent;\r\n        border: 0;\r\n        display: inline;\r\n        line-height: inherit;\r\n        margin: 0;\r\n        overflow: visible;\r\n        padding: 0;\r\n        word-wrap: normal;\r\n        font-size: 100%;\r\n      }\r\n\r\n      /**\r\n   * Blockquotes\r\n   */\r\n\r\n      blockquote {\r\n        margin-left: 30px;\r\n        margin-top: 0px;\r\n        margin-bottom: 16px;\r\n        border-left-width: 3px;\r\n        padding: 0 1em;\r\n        color: #828282;\r\n        border-left: 4px solid #e8e8e8;\r\n        padding-left: 15px;\r\n        font-size: 18px;\r\n        letter-spacing: -1px;\r\n        font-style: italic;\r\n      }\r\n\r\n      blockquote * {\r\n        font-style: normal !important;\r\n        letter-spacing: 0;\r\n        color: #6a737d !important;\r\n      }\r\n\r\n      /**\r\n   * Tables\r\n   */\r\n\r\n      table {\r\n        border-spacing: 2px;\r\n        display: block;\r\n        font-size: 14px;\r\n        overflow: auto;\r\n        width: 100%;\r\n        margin-bottom: 16px;\r\n        border-spacing: 0;\r\n        border-collapse: collapse;\r\n      }\r\n\r\n      td {\r\n        padding: 6px 13px;\r\n        border: 1px solid #dfe2e5;\r\n      }\r\n\r\n      th {\r\n        font-weight: 600;\r\n        padding: 6px 13px;\r\n        border: 1px solid #dfe2e5;\r\n      }\r\n\r\n      tr {\r\n        background-color: #fff;\r\n        border-top: 1px solid #c6cbd1;\r\n      }\r\n\r\n      table tr:nth-child(2n) {\r\n        background-color: #f6f8fa;\r\n      }\r\n\r\n      /**\r\n   * Others\r\n   */\r\n\r\n      img {\r\n        max-width: 100%;\r\n      }\r\n\r\n      p {\r\n        line-height: 24px;\r\n        font-weight: 400;\r\n        font-size: 16px;\r\n        color: #24292e;\r\n      }\r\n\r\n      ul {\r\n        margin-top: 0;\r\n      }\r\n\r\n      li {\r\n        color: #24292e;\r\n        font-size: 16px;\r\n        font-weight: 400;\r\n        line-height: 1.5;\r\n      }\r\n\r\n      li + li {\r\n        margin-top: 0.25em;\r\n      }\r\n\r\n      * {\r\n        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,\r\n          Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",\r\n          "Segoe UI Symbol";\r\n        color: #24292e;\r\n      }\r\n\r\n      a:visited {\r\n        color: #0366d6;\r\n      }\r\n\r\n      h1,\r\n      h2,\r\n      h3 {\r\n        border-bottom: 1px solid #eaecef;\r\n        color: #111;\r\n        /* Darker */\r\n      }\r\n\r\n      code > * {\r\n        font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;\r\n      }\r\n    </style>\r\n  </head>\r\n  <body>\r\n    <main>\r\n      <h1>${{title}}</h1>\r\n      ${{content}}\r\n    </main>\r\n  </body>\r\n</html>\r\n';
+
 // src/main.ts
 async function main_default(_input, context) {
   const currentNodeId = context.currentNodeId;
@@ -1996,253 +1999,19 @@ async function main_default(_input, context) {
       const title = node.name;
       const markdown = await eidos.currentSpace.getDocMarkdown(currentNodeId);
       const content = marked.parse(markdown);
-      const html = `
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="UTF-8">
-          <title>${title}</title>
-          <style>
-          body {
-            font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-            color: #111;
-            background-color: #fbfbfb;
-            -webkit-text-size-adjust: 100%;
-            -webkit-font-feature-settings: "kern" 1;
-            -moz-font-feature-settings: "kern" 1;
-            -o-font-feature-settings: "kern" 1;
-            font-feature-settings: "kern" 1;
-            font-kerning: normal;
-            padding: 30px;
-        }
-        
-        main {
-          max-width: 900px;
-          margin: 0 auto;
-        }
-        
-        @media only screen and (max-width: 600px) {
-            body {
-                padding: 5px;
-            }
-            body>#content {
-                padding: 0px 20px 20px 20px !important;
-            }
-        }
-        
-        body>#content {
-            margin: 0px;
-            max-width: 900px;
-            border: 1px solid #e1e4e8;
-            padding: 10px 40px;
-            padding-bottom: 20px;
-            border-radius: 2px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        summary {
-            cursor: pointer;
-            text-decoration: underline;
-        }
-        
-        hr {
-            color: #bbb;
-            background-color: #bbb;
-            height: 1px;
-            flex: 0 1 auto;
-            margin: 1em 0;
-            padding: 0;
-            border: none;
-        }
-        
-        .hljs-operator {
-            color: #868686;
-        }
-        
-        
-        /**
-         * Links
-         */
-        
-        a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-        
-        a:visited {
-            color: #0366d6;
-        }
-        
-        a:hover {
-            color: #0366d6;
-            text-decoration: underline;
-        }
-        
-        pre {
-            background-color: #f6f8fa;
-            border-radius: 3px;
-            font-size: 85%;
-            line-height: 1.45;
-            overflow: auto;
-            padding: 16px;
-        }
-        
-        
-        /**
-          * Code blocks
-          */
-        
-        code {
-            background-color: rgba(27, 31, 35, .05);
-            border-radius: 3px;
-            font-size: 85%;
-            margin: 0;
-            word-wrap: break-word;
-            padding: .2em .4em;
-            font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
-        }
-        
-        pre>code {
-            background-color: transparent;
-            border: 0;
-            display: inline;
-            line-height: inherit;
-            margin: 0;
-            overflow: visible;
-            padding: 0;
-            word-wrap: normal;
-            font-size: 100%;
-        }
-        
-        
-        /**
-         * Blockquotes
-         */
-        
-        blockquote {
-            margin-left: 30px;
-            margin-top: 0px;
-            margin-bottom: 16px;
-            border-left-width: 3px;
-            padding: 0 1em;
-            color: #828282;
-            border-left: 4px solid #e8e8e8;
-            padding-left: 15px;
-            font-size: 18px;
-            letter-spacing: -1px;
-            font-style: italic;
-        }
-        
-        blockquote * {
-            font-style: normal !important;
-            letter-spacing: 0;
-            color: #6a737d !important;
-        }
-        
-        
-        /**
-         * Tables
-         */
-        
-        table {
-            border-spacing: 2px;
-            display: block;
-            font-size: 14px;
-            overflow: auto;
-            width: 100%;
-            margin-bottom: 16px;
-            border-spacing: 0;
-            border-collapse: collapse;
-        }
-        
-        td {
-            padding: 6px 13px;
-            border: 1px solid #dfe2e5;
-        }
-        
-        th {
-            font-weight: 600;
-            padding: 6px 13px;
-            border: 1px solid #dfe2e5;
-        }
-        
-        tr {
-            background-color: #fff;
-            border-top: 1px solid #c6cbd1;
-        }
-        
-        table tr:nth-child(2n) {
-            background-color: #f6f8fa;
-        }
-        
-        
-        /**
-         * Others
-         */
-        
-        img {
-            max-width: 100%;
-        }
-        
-        p {
-            line-height: 24px;
-            font-weight: 400;
-            font-size: 16px;
-            color: #24292e;
-        }
-        
-        ul {
-            margin-top: 0;
-        }
-        
-        li {
-            color: #24292e;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 1.5;
-        }
-        
-        li+li {
-            margin-top: 0.25em;
-        }
-        
-        * {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            color: #24292e;
-        }
-        
-        a:visited {
-            color: #0366d6;
-        }
-        
-        h1,
-        h2,
-        h3 {
-            border-bottom: 1px solid #eaecef;
-            color: #111;
-            /* Darker */
-        }
-        
-        code>* {
-            font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
-        }
-          </style>
-        </head>
-        <body>
-        <main>
-          <h1>${title}</h1>
-          ${content}
-        </main>
-        </body>
-      </html>
-    `;
+      const html = tmp_default.replace(/\${{title}}/g, title).replace(/\${{content}}/g, content);
       const url = URL.createObjectURL(new Blob([html], { type: "text/html" }));
-      console.log({
-        url,
-        html
+      console.log(url);
+      const docPublishUrl = `${context.env.API_END_POINT}/${currentNodeId}`;
+      const res = await fetch(docPublishUrl, {
+        method: "PUT",
+        body: html
       });
-      return html;
+      if (res.ok) {
+        return docPublishUrl;
+      } else {
+        return `Error: ${res.status} ${res.statusText}`;
+      }
     }
   }
 }

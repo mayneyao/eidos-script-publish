@@ -20,5 +20,11 @@
             "url"
         ]
     },
-    "tables": []
+    "tables": [],
+    "envs": [
+        {
+            "name": "API_END_POINT",
+            "type": "string"
+        }
+    ]
 }
