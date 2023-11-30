@@ -25,6 +25,10 @@
         {
             "name": "API_END_POINT",
             "type": "string"
+        },
+        {
+            "name": "AUTH_KEY_SECRET",
+            "type": "string"
         }
     ]
 }

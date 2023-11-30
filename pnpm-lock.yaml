@@ -1,15 +1,14 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
   marked:
     specifier: ^10.0.0
     version: 10.0.0
 
 devDependencies:
+  '@eidos.space/types':
+    specifier: ^0.0.4
+    version: 0.0.4
   esbuild:
     specifier: ^0.19.7
     version: 0.19.7
@@ -21,6 +20,10 @@ devDependencies:
     version: 5.0.2
 
 packages:
+
+  /@eidos.space/types@0.0.4:
+    resolution: {integrity: sha512-ORf2ojHx7QTzQYPcbSBxuTTaDeaKcWNZ00yyI5n7lzYUNkAKdsWM7C0S2AHn4fb99ZKYp9tZz2VUsruyiG3rxg==}
+    dev: true
 
   /@esbuild/android-arm64@0.19.7:
     resolution: {integrity: sha512-YEDcw5IT7hW3sFKZBkCAQaOCJQLONVcD4bOyTXMZz5fr66pTHnAet46XAtbXAkJRfIn2YVhdC6R9g4xa27jQ1w==}
@@ -444,3 +447,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

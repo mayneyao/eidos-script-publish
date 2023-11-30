@@ -1,3 +1,6 @@
+// src/tmp.html
+var tmp_default = '<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset="UTF-8" />\n    <title>${{title}}</title>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n    <style>\n      body {\n        font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;\n        color: #111;\n        background-color: #fbfbfb;\n        -webkit-text-size-adjust: 100%;\n        -webkit-font-feature-settings: "kern" 1;\n        -moz-font-feature-settings: "kern" 1;\n        -o-font-feature-settings: "kern" 1;\n        font-feature-settings: "kern" 1;\n        font-kerning: normal;\n        padding: 30px;\n      }\n\n      main {\n        max-width: 900px;\n        margin: 0 auto;\n      }\n\n      @media only screen and (max-width: 600px) {\n        body {\n          padding: 5px;\n        }\n        body > #content {\n          padding: 0px 20px 20px 20px !important;\n        }\n      }\n\n      body > #content {\n        margin: 0px;\n        max-width: 900px;\n        border: 1px solid #e1e4e8;\n        padding: 10px 40px;\n        padding-bottom: 20px;\n        border-radius: 2px;\n        margin-left: auto;\n        margin-right: auto;\n      }\n\n      summary {\n        cursor: pointer;\n        text-decoration: underline;\n      }\n\n      hr {\n        color: #bbb;\n        background-color: #bbb;\n        height: 1px;\n        flex: 0 1 auto;\n        margin: 1em 0;\n        padding: 0;\n        border: none;\n      }\n\n      .hljs-operator {\n        color: #868686;\n      }\n\n      /**\n        * Links\n        */\n\n      a {\n        color: #0366d6;\n        text-decoration: none;\n      }\n\n      a:visited {\n        color: #0366d6;\n      }\n\n      a:hover {\n        color: #0366d6;\n        text-decoration: underline;\n      }\n\n      pre {\n        background-color: #f6f8fa;\n        border-radius: 3px;\n        font-size: 85%;\n        line-height: 1.45;\n        overflow: auto;\n        padding: 16px;\n      }\n\n      /**\n    * Code blocks\n    */\n\n      code {\n        background-color: rgba(27, 31, 35, 0.05);\n        border-radius: 3px;\n        font-size: 85%;\n        margin: 0;\n        word-wrap: break-word;\n        padding: 0.2em 0.4em;\n        font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,\n          monospace;\n      }\n\n      pre > code {\n        background-color: transparent;\n        border: 0;\n        display: inline;\n        line-height: inherit;\n        margin: 0;\n        overflow: visible;\n        padding: 0;\n        word-wrap: normal;\n        font-size: 100%;\n      }\n\n      /**\n   * Blockquotes\n   */\n\n      blockquote {\n        margin-left: 30px;\n        margin-top: 0px;\n        margin-bottom: 16px;\n        border-left-width: 3px;\n        padding: 0 1em;\n        color: #828282;\n        border-left: 4px solid #e8e8e8;\n        padding-left: 15px;\n        font-size: 18px;\n        letter-spacing: -1px;\n        font-style: italic;\n      }\n\n      blockquote * {\n        font-style: normal !important;\n        letter-spacing: 0;\n        color: #6a737d !important;\n      }\n\n      /**\n   * Tables\n   */\n\n      table {\n        border-spacing: 2px;\n        display: block;\n        font-size: 14px;\n        overflow: auto;\n        width: 100%;\n        margin-bottom: 16px;\n        border-spacing: 0;\n        border-collapse: collapse;\n      }\n\n      td {\n        padding: 6px 13px;\n        border: 1px solid #dfe2e5;\n      }\n\n      th {\n        font-weight: 600;\n        padding: 6px 13px;\n        border: 1px solid #dfe2e5;\n      }\n\n      tr {\n        background-color: #fff;\n        border-top: 1px solid #c6cbd1;\n      }\n\n      table tr:nth-child(2n) {\n        background-color: #f6f8fa;\n      }\n\n      /**\n   * Others\n   */\n\n      img {\n        max-width: 100%;\n      }\n\n      p {\n        line-height: 24px;\n        font-weight: 400;\n        font-size: 16px;\n        color: #24292e;\n      }\n\n      ul {\n        margin-top: 0;\n      }\n\n      li {\n        color: #24292e;\n        font-size: 16px;\n        font-weight: 400;\n        line-height: 1.5;\n      }\n\n      li + li {\n        margin-top: 0.25em;\n      }\n\n      * {\n        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,\n          Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",\n          "Segoe UI Symbol";\n        color: #24292e;\n      }\n\n      a:visited {\n        color: #0366d6;\n      }\n\n      h1,\n      h2,\n      h3 {\n        border-bottom: 1px solid #eaecef;\n        color: #111;\n        /* Darker */\n      }\n\n      code > * {\n        font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;\n      }\n    </style>\n  </head>\n  <body>\n    <main>\n      <h1>${{title}}</h1>\n      ${{content}}\n    </main>\n  </body>\n</html>\n';
+
 // node_modules/.pnpm/marked@10.0.0/node_modules/marked/lib/marked.esm.js
 function _getDefaults() {
   return {
@@ -1987,8 +1990,59 @@ var parseInline = marked.parseInline;
 var parser = _Parser.parse;
 var lexer = _Lexer.lex;
 
-// src/tmp.html
-var tmp_default = '<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <meta charset="UTF-8" />\r\n    <title>${{title}}</title>\r\n    <meta name="viewport" content="width=device-width, initial-scale=1.0" />\r\n    <style>\r\n      body {\r\n        font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;\r\n        color: #111;\r\n        background-color: #fbfbfb;\r\n        -webkit-text-size-adjust: 100%;\r\n        -webkit-font-feature-settings: "kern" 1;\r\n        -moz-font-feature-settings: "kern" 1;\r\n        -o-font-feature-settings: "kern" 1;\r\n        font-feature-settings: "kern" 1;\r\n        font-kerning: normal;\r\n        padding: 30px;\r\n      }\r\n\r\n      main {\r\n        max-width: 900px;\r\n        margin: 0 auto;\r\n      }\r\n\r\n      @media only screen and (max-width: 600px) {\r\n        body {\r\n          padding: 5px;\r\n        }\r\n        body > #content {\r\n          padding: 0px 20px 20px 20px !important;\r\n        }\r\n      }\r\n\r\n      body > #content {\r\n        margin: 0px;\r\n        max-width: 900px;\r\n        border: 1px solid #e1e4e8;\r\n        padding: 10px 40px;\r\n        padding-bottom: 20px;\r\n        border-radius: 2px;\r\n        margin-left: auto;\r\n        margin-right: auto;\r\n      }\r\n\r\n      summary {\r\n        cursor: pointer;\r\n        text-decoration: underline;\r\n      }\r\n\r\n      hr {\r\n        color: #bbb;\r\n        background-color: #bbb;\r\n        height: 1px;\r\n        flex: 0 1 auto;\r\n        margin: 1em 0;\r\n        padding: 0;\r\n        border: none;\r\n      }\r\n\r\n      .hljs-operator {\r\n        color: #868686;\r\n      }\r\n\r\n      /**\r\n        * Links\r\n        */\r\n\r\n      a {\r\n        color: #0366d6;\r\n        text-decoration: none;\r\n      }\r\n\r\n      a:visited {\r\n        color: #0366d6;\r\n      }\r\n\r\n      a:hover {\r\n        color: #0366d6;\r\n        text-decoration: underline;\r\n      }\r\n\r\n      pre {\r\n        background-color: #f6f8fa;\r\n        border-radius: 3px;\r\n        font-size: 85%;\r\n        line-height: 1.45;\r\n        overflow: auto;\r\n        padding: 16px;\r\n      }\r\n\r\n      /**\r\n    * Code blocks\r\n    */\r\n\r\n      code {\r\n        background-color: rgba(27, 31, 35, 0.05);\r\n        border-radius: 3px;\r\n        font-size: 85%;\r\n        margin: 0;\r\n        word-wrap: break-word;\r\n        padding: 0.2em 0.4em;\r\n        font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,\r\n          monospace;\r\n      }\r\n\r\n      pre > code {\r\n        background-color: transparent;\r\n        border: 0;\r\n        display: inline;\r\n        line-height: inherit;\r\n        margin: 0;\r\n        overflow: visible;\r\n        padding: 0;\r\n        word-wrap: normal;\r\n        font-size: 100%;\r\n      }\r\n\r\n      /**\r\n   * Blockquotes\r\n   */\r\n\r\n      blockquote {\r\n        margin-left: 30px;\r\n        margin-top: 0px;\r\n        margin-bottom: 16px;\r\n        border-left-width: 3px;\r\n        padding: 0 1em;\r\n        color: #828282;\r\n        border-left: 4px solid #e8e8e8;\r\n        padding-left: 15px;\r\n        font-size: 18px;\r\n        letter-spacing: -1px;\r\n        font-style: italic;\r\n      }\r\n\r\n      blockquote * {\r\n        font-style: normal !important;\r\n        letter-spacing: 0;\r\n        color: #6a737d !important;\r\n      }\r\n\r\n      /**\r\n   * Tables\r\n   */\r\n\r\n      table {\r\n        border-spacing: 2px;\r\n        display: block;\r\n        font-size: 14px;\r\n        overflow: auto;\r\n        width: 100%;\r\n        margin-bottom: 16px;\r\n        border-spacing: 0;\r\n        border-collapse: collapse;\r\n      }\r\n\r\n      td {\r\n        padding: 6px 13px;\r\n        border: 1px solid #dfe2e5;\r\n      }\r\n\r\n      th {\r\n        font-weight: 600;\r\n        padding: 6px 13px;\r\n        border: 1px solid #dfe2e5;\r\n      }\r\n\r\n      tr {\r\n        background-color: #fff;\r\n        border-top: 1px solid #c6cbd1;\r\n      }\r\n\r\n      table tr:nth-child(2n) {\r\n        background-color: #f6f8fa;\r\n      }\r\n\r\n      /**\r\n   * Others\r\n   */\r\n\r\n      img {\r\n        max-width: 100%;\r\n      }\r\n\r\n      p {\r\n        line-height: 24px;\r\n        font-weight: 400;\r\n        font-size: 16px;\r\n        color: #24292e;\r\n      }\r\n\r\n      ul {\r\n        margin-top: 0;\r\n      }\r\n\r\n      li {\r\n        color: #24292e;\r\n        font-size: 16px;\r\n        font-weight: 400;\r\n        line-height: 1.5;\r\n      }\r\n\r\n      li + li {\r\n        margin-top: 0.25em;\r\n      }\r\n\r\n      * {\r\n        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,\r\n          Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",\r\n          "Segoe UI Symbol";\r\n        color: #24292e;\r\n      }\r\n\r\n      a:visited {\r\n        color: #0366d6;\r\n      }\r\n\r\n      h1,\r\n      h2,\r\n      h3 {\r\n        border-bottom: 1px solid #eaecef;\r\n        color: #111;\r\n        /* Darker */\r\n      }\r\n\r\n      code > * {\r\n        font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;\r\n      }\r\n    </style>\r\n  </head>\r\n  <body>\r\n    <main>\r\n      <h1>${{title}}</h1>\r\n      ${{content}}\r\n    </main>\r\n  </body>\r\n</html>\r\n';
+// src/markdown.ts
+var imageUrlSet = /* @__PURE__ */ new Set();
+var getPreRender = () => {
+  const renderer = new marked.Renderer();
+  const originalRendererImage = renderer.image.bind(renderer);
+  renderer.image = (href, title, text) => {
+    console.log("href", href);
+    if (href.startsWith("/")) {
+      imageUrlSet.add(href);
+    }
+    return originalRendererImage(href, title, text);
+  };
+  return renderer;
+};
+var getReplaceImgRender = (host) => {
+  const renderer = new marked.Renderer();
+  const originalRendererImage = renderer.image.bind(renderer);
+  renderer.image = (href, title, text) => {
+    if (href.startsWith("/")) {
+      return originalRendererImage(`${host}${href}`, title, text);
+    }
+    return originalRendererImage(href, title, text);
+  };
+  return renderer;
+};
+var markdown2html = async (markdown, context) => {
+  marked.parse(markdown, { renderer: getPreRender() });
+  const publishServiceURL = new URL(context.env.API_END_POINT);
+  for (const url of imageUrlSet) {
+    const file = await eidos.currentSpace.file.getFileByPath(`spaces${url}`);
+    if (file) {
+      const blobURL = await eidos.currentSpace.file.getBlobURL(file.id);
+      const fileResp = await fetch(blobURL);
+      const fileBlob = await fileResp.blob();
+      publishServiceURL.pathname = `/files${url}`;
+      const docPublishUrl = publishServiceURL.toString();
+      const res = await fetch(docPublishUrl, {
+        method: "PUT",
+        body: fileBlob,
+        headers: {
+          "X-Custom-Auth-Key": context.env.AUTH_KEY_SECRET
+        }
+      });
+      console.log(res);
+    }
+  }
+  imageUrlSet.clear();
+  const host = new URL(context.env.API_END_POINT);
+  host.pathname = "/files";
+  return marked.parse(markdown, {
+    renderer: getReplaceImgRender(host.toString())
+  });
+};
 
 // src/main.ts
 async function main_default(_input, context) {
@@ -1998,7 +2052,7 @@ async function main_default(_input, context) {
     if (node.type === "doc") {
       const title = node.name;
       const markdown = await eidos.currentSpace.getDocMarkdown(currentNodeId);
-      const content = marked.parse(markdown);
+      const content = await markdown2html(markdown, context);
       const html = tmp_default.replace(/\${{title}}/g, title).replace(/\${{content}}/g, content);
       const url = URL.createObjectURL(new Blob([html], { type: "text/html" }));
       console.log(url);

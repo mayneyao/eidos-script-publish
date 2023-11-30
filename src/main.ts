@@ -1,10 +1,13 @@
-/// <reference path="eidos.d.ts" />
-import { marked } from "marked";
+import { Eidos } from "@eidos.space/types";
+declare const eidos: Eidos;
+
 import htmlTmp from "./tmp.html";
+import { markdown2html } from "./markdown";
 
 interface Env {
   // add your environment variables here
   API_END_POINT: string;
+  AUTH_KEY_SECRET: string;
 }
 
 interface Table {
@@ -15,7 +18,7 @@ interface Input {
   // add your input fields here
 }
 
-interface Context {
+export interface Context {
   env: Env;
   tables: Table;
   currentNodeId?: string;
@@ -29,7 +32,7 @@ export default async function (_input: Input, context: Context) {
     if (node.type === "doc") {
       const title = node.name;
       const markdown = await eidos.currentSpace.getDocMarkdown(currentNodeId);
-      const content = marked.parse(markdown);
+      const content = await markdown2html(markdown as string, context);
       const html = htmlTmp
         .replace(/\${{title}}/g, title)
         .replace(/\${{content}}/g, content);
