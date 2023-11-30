@@ -2018,6 +2018,9 @@ var getReplaceImgRender = (host) => {
 var markdown2html = async (markdown, context) => {
   marked.parse(markdown, { renderer: getPreRender() });
   const publishServiceURL = new URL(context.env.API_END_POINT);
+  if (!context.env.AUTH_KEY_SECRET) {
+    console.warn("AUTH_KEY_SECRET is not set, skip publish images");
+  }
   for (const url of imageUrlSet) {
     const file = await eidos.currentSpace.file.getFileByPath(`spaces${url}`);
     if (file) {
@@ -2026,14 +2029,13 @@ var markdown2html = async (markdown, context) => {
       const fileBlob = await fileResp.blob();
       publishServiceURL.pathname = `/files${url}`;
       const docPublishUrl = publishServiceURL.toString();
-      const res = await fetch(docPublishUrl, {
+      await fetch(docPublishUrl, {
         method: "PUT",
         body: fileBlob,
         headers: {
           "X-Custom-Auth-Key": context.env.AUTH_KEY_SECRET
         }
       });
-      console.log(res);
     }
   }
   imageUrlSet.clear();
