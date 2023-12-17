@@ -54,9 +54,6 @@
             }
         }
     ],
-    "features": [
-        "TableAction:All"
-    ],
     "tables": [],
     "envs": [
         {
