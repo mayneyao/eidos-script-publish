@@ -2,33 +2,72 @@
     "id": "publish",
     "name": "Eidos Publish",
     "description": "Make doc available to the public",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "dist/main.js",
-    "inputJSONSchema": {
-        "type": "object",
-        "properties": {},
-        "required": []
-    },
-    "outputJSONSchema": {
-        "type": "object",
-        "properties": {
-            "url": {
-                "type": "string"
+    "commands": [
+        {
+            "name": "publish",
+            "description": "publish a doc",
+            "inputJSONSchema": {
+                "type": "object",
+                "properties": {
+                    "slug": {
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "outputJSONSchema": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "url"
+                ]
             }
         },
-        "required": [
-            "url"
-        ]
-    },
+        {
+            "name": "unpublish",
+            "description": "Unpublish a doc",
+            "inputJSONSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            }
+        },
+        {
+            "name": "register",
+            "description": "register a subdomain",
+            "inputJSONSchema": {
+                "type": "object",
+                "properties": {
+                    "subdomain": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "subdomain"
+                ]
+            }
+        }
+    ],
+    "features": [
+        "TableAction:All"
+    ],
     "tables": [],
     "envs": [
         {
-            "name": "API_END_POINT",
-            "type": "string"
+            "name": "SUBDOMAIN",
+            "type": "string",
+            "readonly": true
         },
         {
-            "name": "AUTH_KEY_SECRET",
-            "type": "string"
+            "name": "TOKEN",
+            "type": "string",
+            "readonly": true
         }
     ]
 }

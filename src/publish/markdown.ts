@@ -1,6 +1,6 @@
 import { marked } from "marked";
 import { Eidos } from "@eidos.space/types";
-import { Context } from "./main";
+import { Context, PUBLISH_SERVER } from "../main";
 declare const eidos: Eidos;
 
 export const imageUrlSet = new Set<string>();
@@ -33,30 +33,27 @@ const getReplaceImgRender = (host: string) => {
 export const markdown2html = async (markdown: string, context: Context) => {
   // pre render to collect image urls
   marked.parse(markdown, { renderer: getPreRender() });
-  const publishServiceURL = new URL(context.env.API_END_POINT);
-  if (!context.env.AUTH_KEY_SECRET) {
-    console.warn("AUTH_KEY_SECRET is not set, skip publish images");
-  }
+  const publishServiceURL = new URL(PUBLISH_SERVER);
   for (const url of imageUrlSet) {
     const file = await eidos.currentSpace.file.getFileByPath(`spaces${url}`);
     if (file) {
       const blobURL = await eidos.currentSpace.file.getBlobURL(file.id);
       const fileResp = await fetch(blobURL!);
       const fileBlob = await fileResp.blob();
-      publishServiceURL.pathname = `/files${url}`;
+      publishServiceURL.pathname = `/${context.env.SUBDOMAIN}/files${url}`;
       const docPublishUrl = publishServiceURL.toString();
       await fetch(docPublishUrl, {
         method: "PUT",
         body: fileBlob,
         headers: {
-          "X-Custom-Auth-Key": context.env.AUTH_KEY_SECRET,
+          "x-auth-token": context.env.TOKEN,
         },
       });
     }
   }
   imageUrlSet.clear();
-  const host = new URL(context.env.API_END_POINT);
-  host.pathname = "/files";
+  const host = new URL(PUBLISH_SERVER);
+  host.pathname = `/${context.env.SUBDOMAIN}/files`;
   return marked.parse(markdown, {
     renderer: getReplaceImgRender(host.toString()),
   });
