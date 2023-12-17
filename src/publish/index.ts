@@ -53,14 +53,34 @@ const publishDoc = async (
 
 export async function publish(input: Input, context: Context) {
   const currentNodeId = context.currentNodeId;
+  if (!context.env.SUBDOMAIN) {
+    eidos.currentSpace.notify({
+      title: "Error",
+      description: "Please register your subdomain first",
+    });
+    return;
+  }
   if (context.callFromTableAction && currentNodeId) {
     const rowId = context.currentRowId!;
-    await eidos.currentSpace.table(currentNodeId).rows.update(rowId, {
-      published: true,
-      publishedAt: new Date().toISOString(),
-    });
     const nodeId = rowId.split("-").join("");
+    const docPublishUrl = input.slug
+      ? `${PUBLISH_SERVER}/${context.env.SUBDOMAIN}/${input.slug}`
+      : `${PUBLISH_SERVER}/${context.env.SUBDOMAIN}/${nodeId}`;
+
     await publishDoc(nodeId, context, input.slug);
+    try {
+      await eidos.currentSpace.table(currentNodeId).rows.update(rowId, {
+        published: true,
+        publishedAt: new Date().toISOString(),
+        url: docPublishUrl,
+      });
+    } catch (error) {
+      eidos.currentSpace.notify({
+        title: "Warning",
+        description: "Doc is published but failed to update table row",
+      });
+      console.warn(error);
+    }
   } else if (currentNodeId) {
     await publishDoc(currentNodeId, context, input.slug);
   }

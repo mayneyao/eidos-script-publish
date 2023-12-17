@@ -1,7 +1,7 @@
 {
   "name": "eidos-script-publish",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "scripts": {
     "dev": "esbuild src/main.ts --watch --bundle --outfile=dist/main.js --platform=browser --format=esm --loader:.html=text",
@@ -10,8 +10,7 @@
   "devDependencies": {
     "@eidos.space/types": "^0.0.7",
     "esbuild": "^0.19.7",
-    "typescript": "^5.2.2",
-    "vite": "^5.0.0"
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "marked": "^10.0.0"

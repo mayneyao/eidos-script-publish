@@ -2,7 +2,7 @@
     "id": "publish",
     "name": "Eidos Publish",
     "description": "Make doc available to the public",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "main": "dist/main.js",
     "commands": [
         {
@@ -27,7 +27,8 @@
                 "required": [
                     "url"
                 ]
-            }
+            },
+            "asTableAction": true
         },
         {
             "name": "unpublish",
@@ -36,7 +37,8 @@
                 "type": "object",
                 "properties": {},
                 "required": []
-            }
+            },
+            "asTableAction": true
         },
         {
             "name": "register",
