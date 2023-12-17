@@ -2024,15 +2024,20 @@ var markdown2html = async (markdown, context) => {
       const blobURL = await eidos.currentSpace.file.getBlobURL(file.id);
       const fileResp = await fetch(blobURL);
       const fileBlob = await fileResp.blob();
-      publishServiceURL.pathname = `/${context.env.SUBDOMAIN}/files${url}`;
-      const docPublishUrl = publishServiceURL.toString();
-      await fetch(docPublishUrl, {
-        method: "PUT",
-        body: fileBlob,
-        headers: {
-          "x-auth-token": context.env.TOKEN
-        }
-      });
+      publishServiceURL.pathname = `/${context.env.SUBDOMAIN}/check-file${url}`;
+      const resp = await fetch(publishServiceURL.toString());
+      const data = await resp.json();
+      if (!data.success) {
+        publishServiceURL.pathname = `/${context.env.SUBDOMAIN}/files${url}`;
+        const docPublishUrl = publishServiceURL.toString();
+        await fetch(docPublishUrl, {
+          method: "PUT",
+          body: fileBlob,
+          headers: {
+            "x-auth-token": context.env.TOKEN
+          }
+        });
+      }
     }
   }
   imageUrlSet.clear();
