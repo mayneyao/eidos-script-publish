@@ -2,7 +2,7 @@
     "id": "publish",
     "name": "Eidos Publish",
     "description": "Make doc available to the public",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "main": "dist/main.js",
     "commands": [
         {
@@ -32,7 +32,7 @@
         },
         {
             "name": "unpublish",
-            "description": "Unpublish a doc",
+            "description": "unpublish a doc",
             "inputJSONSchema": {
                 "type": "object",
                 "properties": {},

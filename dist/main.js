@@ -2164,6 +2164,14 @@ var register = async (input, context) => {
     });
     return;
   }
+  const reg = /^[a-z0-9-]+$/;
+  if (!reg.test(input.subdomain)) {
+    eidos.currentSpace.notify({
+      title: "Error",
+      description: "Invalid subdomain"
+    });
+    return;
+  }
   const res = await fetch(`${PUBLISH_SERVER}/api/register`, {
     method: "POST",
     body: JSON.stringify({

@@ -13,6 +13,15 @@ export const register = async (
     });
     return;
   }
+  // check subdomain, it must be a valid domain
+  const reg = /^[a-z0-9-]+$/;
+  if (!reg.test(input.subdomain)) {
+    eidos.currentSpace.notify({
+      title: "Error",
+      description: "Invalid subdomain",
+    });
+    return;
+  }
   const res = await fetch(`${PUBLISH_SERVER}/api/register`, {
     method: "POST",
     body: JSON.stringify({
