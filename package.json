@@ -1,7 +1,7 @@
 {
   "name": "eidos-script-publish",
   "private": true,
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "scripts": {
     "dev": "esbuild src/main.ts --watch --bundle --outfile=dist/main.js --platform=browser --format=esm --loader:.html=text",
