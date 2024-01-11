@@ -1,5 +1,5 @@
 // src/publish/tmp.html
-var tmp_default = '<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset="UTF-8" />\n    <title>${{title}}</title>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n    <style>\n      body {\n        font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;\n        color: #111;\n        background-color: #fbfbfb;\n        -webkit-text-size-adjust: 100%;\n        -webkit-font-feature-settings: "kern" 1;\n        -moz-font-feature-settings: "kern" 1;\n        -o-font-feature-settings: "kern" 1;\n        font-feature-settings: "kern" 1;\n        font-kerning: normal;\n        padding: 30px;\n      }\n\n      main {\n        max-width: 900px;\n        margin: 0 auto;\n      }\n\n      @media only screen and (max-width: 600px) {\n        body {\n          padding: 5px;\n        }\n        body > #content {\n          padding: 0px 20px 20px 20px !important;\n        }\n      }\n\n      body > #content {\n        margin: 0px;\n        max-width: 900px;\n        border: 1px solid #e1e4e8;\n        padding: 10px 40px;\n        padding-bottom: 20px;\n        border-radius: 2px;\n        margin-left: auto;\n        margin-right: auto;\n      }\n\n      summary {\n        cursor: pointer;\n        text-decoration: underline;\n      }\n\n      hr {\n        color: #bbb;\n        background-color: #bbb;\n        height: 1px;\n        flex: 0 1 auto;\n        margin: 1em 0;\n        padding: 0;\n        border: none;\n      }\n\n      .hljs-operator {\n        color: #868686;\n      }\n\n      /**\n        * Links\n        */\n\n      a {\n        color: #0366d6;\n        text-decoration: none;\n      }\n\n      a:visited {\n        color: #0366d6;\n      }\n\n      a:hover {\n        color: #0366d6;\n        text-decoration: underline;\n      }\n\n      pre {\n        background-color: #f6f8fa;\n        border-radius: 3px;\n        font-size: 85%;\n        line-height: 1.45;\n        overflow: auto;\n        padding: 16px;\n      }\n\n      /**\n    * Code blocks\n    */\n\n      code {\n        background-color: rgba(27, 31, 35, 0.05);\n        border-radius: 3px;\n        font-size: 85%;\n        margin: 0;\n        word-wrap: break-word;\n        padding: 0.2em 0.4em;\n        font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,\n          monospace;\n      }\n\n      pre > code {\n        background-color: transparent;\n        border: 0;\n        display: inline;\n        line-height: inherit;\n        margin: 0;\n        overflow: visible;\n        padding: 0;\n        word-wrap: normal;\n        font-size: 100%;\n      }\n\n      /**\n   * Blockquotes\n   */\n\n      blockquote {\n        margin-left: 30px;\n        margin-top: 0px;\n        margin-bottom: 16px;\n        border-left-width: 3px;\n        padding: 0 1em;\n        color: #828282;\n        border-left: 4px solid #e8e8e8;\n        padding-left: 15px;\n        font-size: 18px;\n        letter-spacing: -1px;\n        font-style: italic;\n      }\n\n      blockquote * {\n        font-style: normal !important;\n        letter-spacing: 0;\n        color: #6a737d !important;\n      }\n\n      /**\n   * Tables\n   */\n\n      table {\n        border-spacing: 2px;\n        display: block;\n        font-size: 14px;\n        overflow: auto;\n        width: 100%;\n        margin-bottom: 16px;\n        border-spacing: 0;\n        border-collapse: collapse;\n      }\n\n      td {\n        padding: 6px 13px;\n        border: 1px solid #dfe2e5;\n      }\n\n      th {\n        font-weight: 600;\n        padding: 6px 13px;\n        border: 1px solid #dfe2e5;\n      }\n\n      tr {\n        background-color: #fff;\n        border-top: 1px solid #c6cbd1;\n      }\n\n      table tr:nth-child(2n) {\n        background-color: #f6f8fa;\n      }\n\n      /**\n   * Others\n   */\n\n      img {\n        max-width: 100%;\n      }\n\n      p {\n        line-height: 24px;\n        font-weight: 400;\n        font-size: 16px;\n        color: #24292e;\n      }\n\n      ul {\n        margin-top: 0;\n      }\n\n      li {\n        color: #24292e;\n        font-size: 16px;\n        font-weight: 400;\n        line-height: 1.5;\n      }\n\n      li + li {\n        margin-top: 0.25em;\n      }\n\n      * {\n        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,\n          Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",\n          "Segoe UI Symbol";\n        color: #24292e;\n      }\n\n      a:visited {\n        color: #0366d6;\n      }\n\n      h1,\n      h2,\n      h3 {\n        border-bottom: 1px solid #eaecef;\n        color: #111;\n        /* Darker */\n      }\n\n      code > * {\n        font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;\n      }\n    </style>\n  </head>\n  <body>\n    <main>\n      <h1>${{title}}</h1>\n      ${{content}}\n    </main>\n  </body>\n</html>\n';
+var tmp_default = '<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset="UTF-8" />\n    <title>${{title}}</title>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n    <style>\n      body {\n        font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;\n        color: #111;\n        background-color: #fbfbfb;\n        -webkit-text-size-adjust: 100%;\n        -webkit-font-feature-settings: "kern" 1;\n        -moz-font-feature-settings: "kern" 1;\n        -o-font-feature-settings: "kern" 1;\n        font-feature-settings: "kern" 1;\n        font-kerning: normal;\n        padding: 30px;\n      }\n\n      main {\n        max-width: 900px;\n        margin: 0 auto;\n      }\n\n      ul.toc {\n        list-style: none;\n        margin: 0;\n        padding: 0;\n      }\n      .toc-list-1 {\n        margin-left: 0;\n      }\n      .toc-list-2 {\n        margin-left: 20px;\n      }\n      .toc-list-3 {\n        margin-left: 40px;\n      }\n      .toc-list-4 {\n        margin-left: 60px;\n      }\n      .toc-list-5 {\n        margin-left: 80px;\n      }\n\n      @media only screen and (max-width: 600px) {\n        body {\n          padding: 5px;\n        }\n        body > #content {\n          padding: 0px 20px 20px 20px !important;\n        }\n      }\n\n      body > #content {\n        margin: 0px;\n        max-width: 900px;\n        border: 1px solid #e1e4e8;\n        padding: 10px 40px;\n        padding-bottom: 20px;\n        border-radius: 2px;\n        margin-left: auto;\n        margin-right: auto;\n      }\n\n      summary {\n        cursor: pointer;\n        text-decoration: underline;\n      }\n\n      hr {\n        color: #bbb;\n        background-color: #bbb;\n        height: 1px;\n        flex: 0 1 auto;\n        margin: 1em 0;\n        padding: 0;\n        border: none;\n      }\n\n      .hljs-operator {\n        color: #868686;\n      }\n\n      /**\n        * Links\n        */\n\n      a {\n        color: #0366d6;\n        text-decoration: none;\n      }\n\n      a:visited {\n        color: #0366d6;\n      }\n\n      a:hover {\n        color: #0366d6;\n        text-decoration: underline;\n      }\n\n      pre {\n        background-color: #f6f8fa;\n        border-radius: 3px;\n        font-size: 85%;\n        line-height: 1.45;\n        overflow: auto;\n        padding: 16px;\n      }\n\n      /**\n    * Code blocks\n    */\n\n      code {\n        background-color: rgba(27, 31, 35, 0.05);\n        border-radius: 3px;\n        font-size: 85%;\n        margin: 0;\n        word-wrap: break-word;\n        padding: 0.2em 0.4em;\n        font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,\n          monospace;\n      }\n\n      pre > code {\n        background-color: transparent;\n        border: 0;\n        display: inline;\n        line-height: inherit;\n        margin: 0;\n        overflow: visible;\n        padding: 0;\n        word-wrap: normal;\n        font-size: 100%;\n      }\n\n      /**\n   * Blockquotes\n   */\n\n      blockquote {\n        margin-left: 30px;\n        margin-top: 0px;\n        margin-bottom: 16px;\n        border-left-width: 3px;\n        padding: 0 1em;\n        color: #828282;\n        border-left: 4px solid #e8e8e8;\n        padding-left: 15px;\n        font-size: 18px;\n        letter-spacing: -1px;\n        font-style: italic;\n      }\n\n      blockquote * {\n        font-style: normal !important;\n        letter-spacing: 0;\n        color: #6a737d !important;\n      }\n\n      /**\n   * Tables\n   */\n\n      table {\n        border-spacing: 2px;\n        display: block;\n        font-size: 14px;\n        overflow: auto;\n        width: 100%;\n        margin-bottom: 16px;\n        border-spacing: 0;\n        border-collapse: collapse;\n      }\n\n      td {\n        padding: 6px 13px;\n        border: 1px solid #dfe2e5;\n      }\n\n      th {\n        font-weight: 600;\n        padding: 6px 13px;\n        border: 1px solid #dfe2e5;\n      }\n\n      tr {\n        background-color: #fff;\n        border-top: 1px solid #c6cbd1;\n      }\n\n      table tr:nth-child(2n) {\n        background-color: #f6f8fa;\n      }\n\n      /**\n   * Others\n   */\n\n      img {\n        max-width: 100%;\n      }\n\n      p {\n        line-height: 24px;\n        font-weight: 400;\n        font-size: 16px;\n        color: #24292e;\n      }\n\n      ul {\n        margin-top: 0;\n      }\n\n      li {\n        color: #24292e;\n        font-size: 16px;\n        font-weight: 400;\n        line-height: 1.5;\n      }\n\n      li + li {\n        margin-top: 0.25em;\n      }\n\n      * {\n        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,\n          Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",\n          "Segoe UI Symbol";\n        color: #24292e;\n      }\n\n      a:visited {\n        color: #0366d6;\n      }\n\n      h1,\n      h2,\n      h3 {\n        border-bottom: 1px solid #eaecef;\n        color: #111;\n        /* Darker */\n      }\n\n      code > * {\n        font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;\n      }\n    </style>\n  </head>\n  <body>\n    <main>\n      <h1>${{title}}</h1>\n      ${{content}}\n    </main>\n  </body>\n</html>\n';
 
 // node_modules/.pnpm/marked@10.0.0/node_modules/marked/lib/marked.esm.js
 function _getDefaults() {
@@ -1990,6 +1990,30 @@ var parseInline = marked.parseInline;
 var parser = _Parser.parse;
 var lexer = _Lexer.lex;
 
+// src/publish/helper.ts
+var makeTitleLevels = (tableOfContents) => {
+  const titleLevels = [];
+  const stack = [];
+  let lastLevel = 0;
+  tableOfContents.forEach((title) => {
+    const level = Number(title.slice(1, 2));
+    if (level > lastLevel) {
+      stack.push(level);
+      titleLevels.push(stack.length);
+    } else if (level === lastLevel) {
+      titleLevels.push(stack.length);
+    } else {
+      while (level < lastLevel) {
+        stack.pop();
+        lastLevel--;
+      }
+      titleLevels.push(stack.length);
+    }
+    lastLevel = level;
+  });
+  return titleLevels;
+};
+
 // src/publish/markdown.ts
 var imageUrlSet = /* @__PURE__ */ new Set();
 var getPreRender = () => {
@@ -2004,7 +2028,8 @@ var getPreRender = () => {
   };
   return renderer;
 };
-var getReplaceImgRender = (host) => {
+var toc = [];
+var getRender = (host) => {
   const renderer = new marked.Renderer();
   const originalRendererImage = renderer.image.bind(renderer);
   renderer.image = (href, title, text) => {
@@ -2012,6 +2037,15 @@ var getReplaceImgRender = (host) => {
       return originalRendererImage(`${host}${href}`, title, text);
     }
     return originalRendererImage(href, title, text);
+  };
+  renderer.heading = function(text, level, raw) {
+    const anchor = raw.toLowerCase().replace(/[^\w\\u4e00-\\u9fa5]]+/g, "-");
+    toc.push({
+      anchor,
+      level,
+      text
+    });
+    return "<h" + level + ' id="' + anchor + '">' + text + "</h" + level + ">\n";
   };
   return renderer;
 };
@@ -2043,9 +2077,17 @@ var markdown2html = async (markdown, context) => {
   imageUrlSet.clear();
   const host = new URL(PUBLISH_SERVER);
   host.pathname = `/${context.env.SUBDOMAIN}/files`;
-  return marked.parse(markdown, {
-    renderer: getReplaceImgRender(host.toString())
+  const html = marked.parse(markdown, {
+    renderer: getRender(host.toString())
   });
+  let tocHTML = "<ul class='toc'>";
+  const titleLevels = makeTitleLevels(toc.map((t) => `h${t.level}`));
+  toc.forEach(function(entry, index) {
+    tocHTML += `<li class="toc-list-${titleLevels[index]}"><a href="#${entry.anchor}">${entry.text}</a></li>
+`;
+  });
+  tocHTML += "</ul>\n";
+  return tocHTML + html;
 };
 
 // src/publish/index.ts

@@ -1,6 +1,7 @@
 import { marked } from "marked";
 import { Eidos } from "@eidos.space/types";
 import { Context, PUBLISH_SERVER } from "../main";
+import { makeTitleLevels } from "./helper";
 declare const eidos: Eidos;
 
 export const imageUrlSet = new Set<string>();
@@ -18,7 +19,9 @@ const getPreRender = () => {
   return renderer;
 };
 
-const getReplaceImgRender = (host: string) => {
+const toc: { anchor: string; level: number; text: string }[] = [];
+
+const getRender = (host: string) => {
   const renderer = new marked.Renderer();
   const originalRendererImage = renderer.image.bind(renderer);
   renderer.image = (href, title, text) => {
@@ -26,6 +29,17 @@ const getReplaceImgRender = (host: string) => {
       return originalRendererImage(`${host}${href}`, title, text);
     }
     return originalRendererImage(href, title, text);
+  };
+  renderer.heading = function (text, level, raw) {
+    const anchor = raw.toLowerCase().replace(/[^\w\\u4e00-\\u9fa5]]+/g, "-");
+    toc.push({
+      anchor: anchor,
+      level: level,
+      text: text,
+    });
+    return (
+      "<h" + level + ' id="' + anchor + '">' + text + "</h" + level + ">\n"
+    );
   };
   return renderer;
 };
@@ -59,7 +73,15 @@ export const markdown2html = async (markdown: string, context: Context) => {
   imageUrlSet.clear();
   const host = new URL(PUBLISH_SERVER);
   host.pathname = `/${context.env.SUBDOMAIN}/files`;
-  return marked.parse(markdown, {
-    renderer: getReplaceImgRender(host.toString()),
+  const html = marked.parse(markdown, {
+    renderer: getRender(host.toString()),
   });
+
+  let tocHTML = "<ul class='toc'>";
+  const titleLevels = makeTitleLevels(toc.map((t) => `h${t.level}`));
+  toc.forEach(function (entry, index) {
+    tocHTML += `<li class="toc-list-${titleLevels[index]}"><a href="#${entry.anchor}">${entry.text}</a></li>\n`;
+  });
+  tocHTML += "</ul>\n";
+  return tocHTML + html;
 };
