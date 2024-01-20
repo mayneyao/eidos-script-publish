@@ -2,7 +2,7 @@
     "id": "publish",
     "name": "Eidos Publish",
     "description": "Make doc available to the public",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "main": "dist/main.js",
     "commands": [
         {
