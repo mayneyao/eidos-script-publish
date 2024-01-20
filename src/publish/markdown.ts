@@ -2,6 +2,8 @@ import { marked } from "marked";
 import { Eidos } from "@eidos.space/types";
 import { Context, PUBLISH_SERVER } from "../main";
 import { makeTitleLevels } from "./helper";
+import hljs from "highlight.js";
+
 declare const eidos: Eidos;
 
 export const imageUrlSet = new Set<string>();
@@ -40,6 +42,13 @@ const getRender = (host: string) => {
     return (
       "<h" + level + ' id="' + anchor + '">' + text + "</h" + level + ">\n"
     );
+  };
+  renderer.code = function (code, language) {
+    const highlighted = hljs.highlight(code, {
+      language: language!,
+      ignoreIllegals: true,
+    });
+    return `<pre><code class="hljs ${language}">${highlighted.value}</code></pre>`;
   };
   return renderer;
 };

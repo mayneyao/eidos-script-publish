@@ -1,6 +1,13 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
+  highlight.js:
+    specifier: ^11.9.0
+    version: 11.9.0
   marked:
     specifier: ^10.0.0
     version: 10.0.0
@@ -250,6 +257,11 @@ packages:
       '@esbuild/win32-x64': 0.19.7
     dev: true
 
+  /highlight.js@11.9.0:
+    resolution: {integrity: sha512-fJ7cW7fQGCYAkgv4CPfwFHrfd/cLS4Hau96JuJ+ZTOWhjnhoeN1ub1tFmALm/+lW5z4WCAuAV9bm05AP0mS6Gw==}
+    engines: {node: '>=12.0.0'}
+    dev: false
+
   /marked@10.0.0:
     resolution: {integrity: sha512-YiGcYcWj50YrwBgNzFoYhQ1hT6GmQbFG8SksnYJX1z4BXTHSOrz1GB5/Jm2yQvMg4nN1FHP4M6r03R10KrVUiA==}
     engines: {node: '>= 18'}
@@ -261,7 +273,3 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
